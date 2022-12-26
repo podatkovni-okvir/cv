@@ -1,0 +1,96 @@
+---
+name: Jelena
+surname: Bugarin
+position: "Data Analyst | mag. psych."
+#address: ""
+phone: +385 955192084
+email: "jelenaa.bugarin@gmail.com"
+#twitter: 
+github: podatkovni-okvir
+#linkedin: 
+#date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "I am a psychologist interested in data analysis, data science, and automation of reporting. Driven by curiosity and the need to understand how things are working, I am always ready to learn something new and switch things up in order to try and make stuff more efficient."
+hexcolor: 000000
+output: vitae::awesomecv
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(dplyr)
+library(tibble)
+library(googlesheets4)
+library(tidyr)
+library(stringr)
+```
+
+```{r data_import}
+google_sheet <- "https://docs.google.com/spreadsheets/d/1_6JCugS2G_5Qr3eRJGMqKUubcg9WKMgGe2wlTDkxo2U/edit?usp=sharing"
+gs4_deauth()
+gs4_info <- gs4_get(google_sheet)
+for (sheet in gs4_info$sheets$name) { # importing each sheet into separate df
+    df_name <- paste("df", sheet, sep = "_")
+    df <- read_sheet(google_sheet, sheet = sheet)
+    gdata::mv(from = "df", to =df_name)
+}
+```
+
+```{r data_prep}
+df_detailed_entries <- filter(df_detailed_entries, show == TRUE) # filtering eneries I do not want to show
+dfl_detailed_entries <- pivot_longer(df_detailed_entries, 
+                                     cols = starts_with("description"), 
+                                     values_to = "description", 
+                                     values_drop_na = TRUE
+                                     )  # getting data into needed format
+
+dfl_detailed_entries[dfl_detailed_entries == "_"] <- NA
+
+for (detailed_section in unique(dfl_detailed_entries$section)) {
+    df_name <- paste("df", detailed_section, sep = "_")
+    df <- filter(dfl_detailed_entries, section == detailed_section)
+    gdata::mv(from = "df", to =df_name)
+} # creating separate df for every section
+```
+
+# Education
+
+```{r education}
+detailed_entries(df_education, title, where, institution, when, description)
+```
+
+# Experience
+
+```{r experience}
+detailed_entries(df_experience, title, where, institution, when, description)
+```
+
+# Volunteering
+
+```{r volunteering}
+detailed_entries(df_volunteering, title, where, institution, when, description)
+```
+
+# Projects
+
+```{r projects}
+detailed_entries(df_projects, institution, where, title, when, description)
+```
+
+\newpage 
+
+# Certifications
+
+```{r certifications}
+df_brief_enteries <- filter(df_brief_enteries, show == TRUE)
+detailed_entries(df_brief_enteries, what = institution, where = when, with = title)
+```
+
+# Publications
+
+```{r eval = FALSE}
+
+knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+
+bibliography_entries("packages.bib") %>%
+  arrange(desc(author$family), issued)
+```
