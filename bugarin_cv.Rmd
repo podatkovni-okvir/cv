@@ -22,15 +22,16 @@ library(googlesheets4)
 library(tidyr)
 library(stringr)
 ```
-
+<!-- avoiding highlight color in section titles -->
 ``` {=latex}
 \setbool{acvSectionColorHighlight}{false}
 ```
 
 ```{r data_import}
 google_sheet <- "https://docs.google.com/spreadsheets/d/1_6JCugS2G_5Qr3eRJGMqKUubcg9WKMgGe2wlTDkxo2U/edit?usp=sharing"
-gs4_deauth()
-gs4_info <- gs4_get(google_sheet)
+# link to googlesheet with data
+gs4_deauth() # API for googlesheets
+gs4_info <- gs4_get(google_sheet) # get sheet names
 for (sheet in gs4_info$sheets$name) { # importing each sheet into separate df
     df_name <- paste("df", sheet, sep = "_")
     df <- read_sheet(google_sheet, sheet = sheet)
@@ -47,6 +48,7 @@ dfl_detailed_entries <- pivot_longer(df_detailed_entries,
                                      )  # getting data into needed format
 
 dfl_detailed_entries[dfl_detailed_entries == "_"] <- NA
+# detailed enteries without descriptions 
 
 for (detailed_section in unique(dfl_detailed_entries$section)) {
     df_name <- paste("df", detailed_section, sep = "_")
@@ -56,13 +58,13 @@ for (detailed_section in unique(dfl_detailed_entries$section)) {
 
 
 
-df_brief_enteries <- filter(df_brief_enteries, show == TRUE)
+df_brief_enteries <- filter(df_brief_enteries, show == TRUE) # filtering brief enteries
 
 for (brief_section in unique(df_brief_enteries$section)) {
     df_name <- paste("df", brief_section, sep = "_")
     df <- dplyr::filter(df_brief_enteries, section == brief_section)
     gdata::mv(from = "df", to =df_name)
-}
+} # creating separate df for every section
 ```
 
 # Education
@@ -94,7 +96,7 @@ detailed_entries(df_projects, institution, where, title, when, description)
 # Certifications
 
 ```{r certifications}
-
+# using detailed enteries on brief eneteries because I like that setup more
 detailed_entries(df_certifications, what = institution, where = when, with = title)
 ```
 
