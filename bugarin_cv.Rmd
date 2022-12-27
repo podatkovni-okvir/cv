@@ -50,9 +50,19 @@ dfl_detailed_entries[dfl_detailed_entries == "_"] <- NA
 
 for (detailed_section in unique(dfl_detailed_entries$section)) {
     df_name <- paste("df", detailed_section, sep = "_")
-    df <- filter(dfl_detailed_entries, section == detailed_section)
+    df <- dplyr::filter(dfl_detailed_entries, section == detailed_section)
     gdata::mv(from = "df", to =df_name)
 } # creating separate df for every section
+
+
+
+df_brief_enteries <- filter(df_brief_enteries, show == TRUE)
+
+for (brief_section in unique(df_brief_enteries$section)) {
+    df_name <- paste("df", brief_section, sep = "_")
+    df <- dplyr::filter(df_brief_enteries, section == brief_section)
+    gdata::mv(from = "df", to =df_name)
+}
 ```
 
 # Education
@@ -84,8 +94,15 @@ detailed_entries(df_projects, institution, where, title, when, description)
 # Certifications
 
 ```{r certifications}
-df_brief_enteries <- filter(df_brief_enteries, show == TRUE)
-detailed_entries(df_brief_enteries, what = institution, where = when, with = title)
+
+detailed_entries(df_certifications, what = institution, where = when, with = title)
+```
+
+# Skills
+
+```{r skills}
+
+detailed_entries(df_skills, what = institution, with = title)
 ```
 
 # Publications
