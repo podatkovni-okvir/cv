@@ -11,6 +11,7 @@ github: podatkovni-okvir
 #date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "I am a psychologist interested in data analysis, data science, and automation. Driven by curiosity and the need to understand how things are working, I am always ready to learn something new and switch things up in order to try and make stuff more efficient."
 output: vitae::awesomecv
+csl: apa.csl
 ---
 
 ```{r setup, include = FALSE}
@@ -67,17 +68,18 @@ for (brief_section in unique(df_brief_enteries$section)) {
 } # creating separate df for every section
 ```
 
+# Experience
+
+```{r experience}
+detailed_entries(df_experience, title, where, institution, when, description)
+```
+
 # Education
 
 ```{r education}
 detailed_entries(df_education, title, where, institution, when, description)
 ```
 
-# Experience
-
-```{r experience}
-detailed_entries(df_experience, title, where, institution, when, description)
-```
 
 # Volunteering
 
@@ -107,12 +109,9 @@ detailed_entries(df_certifications, what = institution, where = when, with = tit
 detailed_entries(df_skills, what = institution, with = title)
 ```
 
-# Publications
+<!---# Publications and Conferences--->
 
-```{r eval = FALSE}
+```{r publications-and-conferences, eval = F}
 
-knitr::write_bib(c("vitae", "tibble"), "packages.bib")
-
-bibliography_entries("packages.bib") %>%
-  arrange(desc(author$family), issued)
+bibliography_entries(here::here("data", "publications-and-conferences.bib"))
 ```
