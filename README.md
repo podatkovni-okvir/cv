@@ -24,7 +24,7 @@ Pieces of information such as name, surname, contact and short "about me" sectio
 
 Feel free to reuse: 
 - clone repo
-- change .Rmd file name (this determines the name of you .pdf output) [.Rmd file] (/bugarin_cv.Rmd)
+- change .Rmd file name (this determines the name of you .pdf output) [.Rmd file](/bugarin_cv.Rmd)
 - change YAML in the .Rmd file [first 15 lines] (here you can also have fun exploring different templates from the `vitae` package (be careful of the code chunk at line 28 which alters highlight colors, might be best to comment it (crtl + shift + c)))
 - copy googlesheets document and change entries https://docs.google.com/spreadsheets/d/1_6JCugS2G_5Qr3eRJGMqKUubcg9WKMgGe2wlTDkxo2U/edit?usp=sharing 
 - change googlesheets URL in the code [line 32] (your sheets need to be public)
