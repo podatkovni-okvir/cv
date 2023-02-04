@@ -11,7 +11,7 @@ github: podatkovni-okvir
 #date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "I am a psychologist interested in data analysis, data science, and automation. Driven by curiosity and the need to understand how things are working, I am always ready to learn something new and switch things up in order to try and make stuff more efficient."
 output: vitae::awesomecv
-csl: apa.csl
+#csl: apa7.csl
 ---
 
 ```{r setup, include = FALSE}
@@ -109,9 +109,9 @@ detailed_entries(df_certifications, what = institution, where = when, with = tit
 detailed_entries(df_skills, what = institution, with = title)
 ```
 
-<!---# Publications and Conferences--->
+# Publications and Conferences
 
-```{r publications-and-conferences, eval = F}
+```{r publications-and-conferences}
 
 bibliography_entries(here::here("data", "publications-and-conferences.bib"))
 ```
