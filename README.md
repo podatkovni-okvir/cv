@@ -8,24 +8,25 @@ Kao dizajn je korišten `awesomecv` template iz R paketa `vitae`.
 
 Ukratko, podaci iz googlesheetsa i .bib datoteke provučeni su kroz funkcije iz paketa `vitae`
 te u kombinaciji s pridavanjem pripadajućih naslova odjeljaka u .Rmd datoteci čine životopis.
-U YAML zaglavlju se nalaze osnovne informacije poput imena, prezimena, kontaka i kratkog sažetka. 
+U YAML zaglavlju se nalaze osnovne informacije poput imena, prezimena, kontakta i kratkog sažetka. 
 
 -------
 The purpose of this repo is to have a CV that is easily updatable.
 
-Enteries are provided in a googlesheets document.
+Entries are provided in a googlesheets document.
 Publications are contained in a .bib file.
 `awesomecv` template from R package `vitae` is used as a template. 
 
 In short, data from googlesheets and .bib file is sent to functions from the `vitae` package, 
-and in combination with provision of corresponding titles in the .Rmd file creates a CV.
+and in combination with provision of corresponding section titles in the .Rmd file creates a CV.
 Information like name, surname, contact and short "about me" section is contained in the YAML header. 
 
 
 Feel free to reuse: 
 - clone repo
-- change YAML (here you can also have fun exploring different templates from the `vitae` package)
-- copy googlesheets document and change enteries
-- change googlesheets URL in code (your sheests need to be public)
-- change resume tittles accordingly
-- change .bib file (in case you do not want your resume to have publications just delete or comment that part of the code)
+- change .Rmd file name (this determines the name of you .pdf output)
+- change YAML (here you can also have fun exploring different templates from the `vitae` package (be careful of the code chunk at line 27 which alters highlight colors, might be best to delete it))
+- copy googlesheets document and change entries https://docs.google.com/spreadsheets/d/1_6JCugS2G_5Qr3eRJGMqKUubcg9WKMgGe2wlTDkxo2U/edit?usp=sharing 
+- change googlesheets URL in code [line 32] (your sheests need to be public)
+- change resume section titles accordingly (delete the ones you do not want, add new ones; dataframes will have names that correspond to the section enries in googlesheets, eg. section "education" will be turned into "df_education" (if you want to have a detailed entry without bullet points, put "_" into column "description_1"))
+- change .bib file (in case you do not want your resume to have publications just delete or comment that part of the code [starting at line 112])
