@@ -27,8 +27,8 @@ Feel free to reuse:
 - change .Rmd file name (this determines the name of you .pdf output)
 - change YAML (here you can also have fun exploring different templates from the `vitae` package (be careful of the code chunk at line 27 which alters highlight colors, might be best to delete it))
 - copy googlesheets document and change entries https://docs.google.com/spreadsheets/d/1_6JCugS2G_5Qr3eRJGMqKUubcg9WKMgGe2wlTDkxo2U/edit?usp=sharing 
-- change googlesheets URL in code [line 32] (your sheests need to be public)
-- change resume section titles accordingly (delete the ones you do not want, add new ones; dataframes will have names that correspond to the section enries in googlesheets, eg. section "education" will be turned into "df_education" (if you want to have a detailed entry without bullet points, put "_" into column "description_1"))
+- change googlesheets URL in the code [line 32] (your sheets need to be public)
+- change resume section titles accordingly (delete the ones you do not want, add new ones; dataframes will have names that correspond to the section entries in googlesheets, eg. section "education" will be turned into "df_education" (if you want to have a detailed entry without bullet points, put "_" into column "description_1"))
 - change .bib file (in case you do not want your resume to have publications just delete or comment that part of the code [starting at line 112])
 
 `vitae` https://pkg.mitchelloharawild.com/vitae/reference/index.html
