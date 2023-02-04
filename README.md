@@ -1,4 +1,4 @@
-# cv
+# CV
 
 Repo je nastao s ciljem izrade životopisa koji je lako ažurirati. 
 
