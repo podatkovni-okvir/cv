@@ -19,7 +19,7 @@ Publications are contained in a .bib file.
 
 In short, data from googlesheets and .bib file is sent to functions from the `vitae` package, 
 and in combination with provision of corresponding section titles in the .Rmd file creates a CV.
-Information like name, surname, contact and short "about me" section is contained in the YAML header. 
+Pieces of information such as name, surname, contact and short "about me" section are contained in the YAML header. 
 
 
 Feel free to reuse: 
