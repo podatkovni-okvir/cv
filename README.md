@@ -20,3 +20,12 @@ Publications are contained in a .bib file.
 In short, data from googlesheets and .bib file is sent to functions from the `vitae` package, 
 and in combination with provision of corresponding titles in the .Rmd file creates a CV.
 Information like name, surname, contact and short "about me" section is contained in the YAML header. 
+
+
+Feel free to reuse: 
+- clone repo
+- change YAML (here you can also have fun exploring different templates from the `vitae` package)
+- copy googlesheets document and change enteries
+- change googlesheets URL in code (your sheests need to be public)
+- change resume tittles accordingly
+- change .bib file (in case you do not want your resume to have publications just delete or comment that part of the code)
