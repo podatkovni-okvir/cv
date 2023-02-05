@@ -17,9 +17,9 @@ Entries are provided in a googlesheets document.
 Publications are contained in a .bib file.
 `awesomecv` template from R package `vitae` is used as a template. 
 
-In short, data from googlesheets and .bib file is sent to functions from the `vitae` package, 
-and in combination with provision of corresponding section titles in the .Rmd file creates a CV.
-Pieces of information such as name, surname, contact and short "about me" section are contained in the YAML header. 
+In short, data from googlesheets and .bib file is sent to the functions from `vitae` package, 
+and in combination with provision of corresponding section titles in the .Rmd file, they create a CV.
+Pieces of information such as name, surname, contact and a short "about me" section are contained in the YAML header. 
 
 
 ### Feel free to reuse: 
@@ -31,6 +31,13 @@ Pieces of information such as name, surname, contact and short "about me" sectio
 - change [.bib file](data/publications-and-conferences.bib) (in case you do not want your resume to have publications just delete or comment that part of the code [starting at line 112])
 - change YAML in the [.Rmd file](/bugarin_cv.Rmd) [first 15 lines] (here you can also have fun exploring different templates from the `vitae` package (if you do so, be careful of the code chunk at line 28 which alters highlight colors, might be best to delete it))
 
-
+#### Resources:
 
 `vitae` https://pkg.mitchelloharawild.com/vitae/reference/index.html
+
+If you are using R Markdown for the first time and you do not have LaTeX on your computer, you will need  
+https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html  
+or  
+https://miktex.org/download
+
+
