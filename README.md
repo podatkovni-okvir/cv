@@ -7,7 +7,7 @@ Publikacije se nalaze u .bib datoteci.
 Kao dizajn je korišten `awesomecv` template iz R paketa `vitae`. 
 
 Ukratko, podaci iz googlesheetsa i .bib datoteke provučeni su kroz funkcije iz paketa `vitae`
-te u kombinaciji s pridavanjem pripadajućih naslova odjeljaka u .Rmd datoteci čine životopis.
+te u kombinaciji s pridavanjem pripadajućih naslova odjeljaka u .Rmd datoteci čine [životopis](/bugarin_cv.pdf).
 U YAML zaglavlju se nalaze osnovne informacije poput imena, prezimena, kontakta i kratkog sažetka. 
 
 -------
@@ -18,13 +18,22 @@ Publications are contained in a .bib file.
 `awesomecv` template from R package `vitae` is used as a template. 
 
 In short, data from googlesheets and .bib file is sent to the functions from `vitae` package, 
-and in combination with provision of corresponding section titles in the .Rmd file, a CV is created.
+and in combination with provision of corresponding section titles in the .Rmd file, a [CV](/bugarin_cv.pdf) is created.
 Pieces of information such as name, surname, contact and a short "about me" section are contained in the YAML header. 
+
 
 
 ### Feel free to reuse: 
 - clone repo
-- change [.Rmd file](/bugarin_cv.Rmd) name (this determines the name of you .pdf output) 
+- if you are using R Markdown for the first time and you do not have LaTeX on your computer, you will need to install it using 
+https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html  
+or  
+https://miktex.org/download
+- install needed packages if you do not have them already (you can copy this to the console)
+```
+install.packages(c("vitae", "tidyverse", "googlesheets4"))
+```
+- change [.Rmd file](/bugarin_cv.Rmd) name (this determines the name of your .pdf output) 
 - change [.bib file](data/publications-and-conferences.bib) (in case you do not want your resume to have publications, you can just delete that part of the code [starting at line 112])
 - copy googlesheets document and change entries https://docs.google.com/spreadsheets/d/1_6JCugS2G_5Qr3eRJGMqKUubcg9WKMgGe2wlTDkxo2U/edit?usp=sharing 
 - you can show or hide entries in your resume by putting "TRUE" or "FALSE" (respectively) in the column "show"
@@ -35,10 +44,3 @@ Pieces of information such as name, surname, contact and a short "about me" sect
 #### Resources:
 
 `vitae` https://pkg.mitchelloharawild.com/vitae/reference/index.html - here you can read more about package functions and templates that it provides
-
-If you are using R Markdown for the first time and you do not have LaTeX on your computer, you will need  
-https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html  
-or  
-https://miktex.org/download
-
-
