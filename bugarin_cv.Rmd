@@ -7,7 +7,7 @@ phone:
 email: ""
 #twitter: 
 github: podatkovni-okvir
-#linkedin: 
+linkedin: jelena-bugarin-18ab84204
 #date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "I am a psychologist interested in data analysis, data science, and automation. Driven by curiosity and the need to understand how things are working, I am always ready to learn something new and switch things up in order to try and make stuff more efficient."
 output: vitae::awesomecv
