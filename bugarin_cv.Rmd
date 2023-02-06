@@ -3,8 +3,8 @@ name: Jelena
 surname: Bugarin
 position: "Data Analyst | mag. psych."
 #address: ""
-phone: +385 955192084
-email: "jelenaa.bugarin@gmail.com"
+phone: 
+email: ""
 #twitter: 
 github: podatkovni-okvir
 #linkedin: 
