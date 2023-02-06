@@ -25,7 +25,7 @@ Pieces of information such as name, surname, contact and a short "about me" sect
 
 ### Feel free to reuse: 
 - clone repo
-- if you are using R Markdown for the first time and you do not have LaTeX on your computer, you will need to install it using 
+- if you are using R Markdown for the first time and you do not have LaTeX on your computer, you will need to install it using  
 https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html  
 or  
 https://miktex.org/download
